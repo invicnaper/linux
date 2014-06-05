@@ -126,7 +126,11 @@ int printk_emit(int facility, int level,
 
 asmlinkage __printf(1, 2) __cold
 int printk(const char *fmt, ...);
+asmlinkage __printf(2, 3) __cold
+int type_printk(int type, char *fmt, ...);
 
+asmlinkage __printf(2, 3) __cold
+int type_printk_using_printk_sched(int type, char *fmt, ...);
 /*
  * Special printk facility for scheduler use only, _DO_NOT_USE_ !
  */
